@@ -15,7 +15,6 @@ spec:
       containers:
         - name: auth
           image: us.gcr.io/nifty-might-327519/auth
-          imagePullPolicy: Never
 ---
 apiVersion: v1
 kind: Service
