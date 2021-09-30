@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2alpha3
+kind: config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: nifty-might-327519
+  artifacts:
+    - image: us.gcr.io/nifty-might-327519/auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
