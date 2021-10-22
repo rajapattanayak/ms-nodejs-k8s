@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: auth
-          image: us.gcr.io/nifty-might-327519/auth
+          #image: us.gcr.io/nifty-might-327519/auth
+          image: praja/auth
 ---
 apiVersion: v1
 kind: Service
